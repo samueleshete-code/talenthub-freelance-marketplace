@@ -1,0 +1,105 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 32px 24px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(37, 99, 235, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.avatarWrap {
+  position: relative;
+  width: 96px;
+  height: 96px;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+}
+
+.socialOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover .socialOverlay { opacity: 1; }
+
+.socialBtn {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 14px;
+  transition: all var(--transition-fast);
+}
+
+.socialBtn:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+.info { display: flex; flex-direction: column; gap: 6px; }
+
+.name {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--gray-900);
+}
+
+.role {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--primary);
+}
+
+.bio {
+  font-size: var(--text-sm);
+  color: var(--gray-500);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Dark mode ── */
+[data-theme="dark"] .card {
+  background: rgba(30, 41, 59, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .card:hover {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(37, 99, 235, 0.25);
+}
+[data-theme="dark"] .name { color: var(--gray-900); }
+[data-theme="dark"] .bio  { color: var(--gray-500); }

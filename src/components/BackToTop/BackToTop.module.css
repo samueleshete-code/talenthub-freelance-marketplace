@@ -1,0 +1,88 @@
+.btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: var(--z-fixed);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Hidden by default */
+  opacity: 0;
+  transform: translateY(16px) scale(0.85);
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: var(--shadow-xl), 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* Progress ring */
+.ring {
+  position: absolute;
+  inset: 0;
+}
+
+.ringTrack {
+  stroke: var(--gray-200);
+}
+
+.ringProgress {
+  stroke: url(#btt-grad);
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+/* Arrow icon */
+.arrow {
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  color: var(--primary);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn:hover .arrow {
+  transform: translateY(-2px);
+}
+
+/* Dark mode */
+[data-theme="dark"] .btn {
+  background: var(--gray-100);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .ringTrack {
+  stroke: var(--gray-200);
+}
+
+/* Mobile: slightly smaller & repositioned */
+@media (max-width: 480px) {
+  .btn {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}

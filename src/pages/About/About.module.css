@@ -1,0 +1,258 @@
+.page { min-height: 100vh; }
+
+/* Hero */
+.hero {
+  position: relative;
+  background: var(--gradient-primary);
+  padding: clamp(100px, 14vw, 160px) 0 clamp(80px, 10vw, 120px);
+  overflow: hidden;
+  text-align: center;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.heroInner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+
+.heroBadge { color: rgba(255,255,255,0.9); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.12) !important; }
+
+.heroTitle {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: var(--font-black);
+  color: white;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.heroHighlight {
+  background: linear-gradient(135deg, #A5F3FC, #FDE68A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+  color: rgba(255,255,255,0.75);
+  max-width: 560px;
+}
+
+.heroCta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+/* Mission */
+.missionSection { background: white; }
+
+.missionGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+.missionCard {
+  padding: 40px;
+  background: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-2xl);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all var(--transition-base);
+}
+
+.missionCard:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(37,99,235,0.2);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.missionIcon { font-size: 40px; }
+
+.missionTitle {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-extrabold);
+  color: var(--gray-900);
+}
+
+.missionText {
+  font-size: var(--text-base);
+  color: var(--gray-500);
+  line-height: var(--leading-relaxed);
+}
+
+/* Story */
+.storySection { background: var(--gray-50); }
+
+.storyLayout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+
+.storyContent { display: flex; flex-direction: column; gap: 16px; }
+
+.storyText { font-size: var(--text-base); color: var(--gray-500); line-height: var(--leading-relaxed); }
+
+/* Timeline */
+.storyTimeline { display: flex; flex-direction: column; gap: 0; }
+
+.milestone { display: grid; grid-template-columns: 60px 2px 1fr; gap: 0 16px; align-items: start; padding-bottom: 24px; }
+
+.milestoneYear {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--font-extrabold);
+  color: var(--primary);
+  padding-top: 2px;
+  text-align: right;
+}
+
+.milestoneLine {
+  width: 2px;
+  background: var(--gray-200);
+  position: relative;
+  min-height: 40px;
+}
+
+.milestoneLine::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.milestoneContent {
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  line-height: var(--leading-relaxed);
+  padding-top: 2px;
+}
+
+/* Values */
+.valuesSection { background: white; }
+
+.valuesGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+.valueCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px 24px;
+  background: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition: all var(--transition-base);
+}
+
+.valueCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(37,99,235,0.2);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.valueIcon { font-size: 32px; }
+
+.valueTitle { font-size: var(--text-base); font-weight: var(--font-bold); color: var(--gray-900); }
+
+.valueDesc { font-size: var(--text-sm); color: var(--gray-500); line-height: var(--leading-relaxed); }
+
+/* Team */
+.teamSection { background: var(--gray-50); }
+
+.teamGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+/* Goals */
+.goalsSection { background: white; }
+
+.goalsLayout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+
+.goalList { display: flex; flex-direction: column; gap: 14px; }
+
+.goalItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--text-base);
+  color: var(--gray-700);
+  font-weight: var(--font-medium);
+}
+
+.goalCheck { color: var(--success); font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+.goalsVisual { display: flex; justify-content: center; }
+
+.goalsCard {
+  background: var(--gradient-primary);
+  border-radius: var(--radius-2xl);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  box-shadow: var(--shadow-2xl);
+  max-width: 360px;
+  width: 100%;
+}
+
+.goalsCardIcon { font-size: 56px; color: rgba(255,255,255,0.9); }
+
+.goalsCardTitle { font-size: var(--text-2xl); font-weight: var(--font-extrabold); color: white; letter-spacing: -0.02em; }
+
+.goalsCardText { font-size: var(--text-sm); color: rgba(255,255,255,0.75); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .missionGrid { grid-template-columns: 1fr; }
+  .storyLayout { grid-template-columns: 1fr; }
+  .valuesGrid { grid-template-columns: repeat(2, 1fr); }
+  .teamGrid { grid-template-columns: repeat(2, 1fr); }
+  .goalsLayout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .valuesGrid { grid-template-columns: 1fr; }
+  .teamGrid { grid-template-columns: 1fr; }
+  .heroCta { flex-direction: column; align-items: center; }
+}
+
+/* ── Dark mode ── */
+[data-theme="dark"] .missionSection { background: var(--bg-primary); }
+
+[data-theme="dark"] .missionCard {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .missionCard:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+[data-theme="dark"] .storySection { background: var(--gray-50); }
+[data-theme="dark"] .milestoneContent { color: var(--gray-500); }
+[data-theme="dark"] .milestoneLine { background: var(--gray-200); }
+[data-theme="dark"] .milestoneLine::before { border-color: var(--bg-primary); }
+
+[data-theme="dark"] .valuesSection { background: var(--bg-primary); }
+[data-theme="dark"] .valueCard {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .valueCard:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(37, 99, 235, 0.25);
+}
+[data-theme="dark"] .valueTitle { color: var(--gray-900); }
+[data-theme="dark"] .valueDesc { color: var(--gray-500); }
+
+[data-theme="dark"] .teamSection { background: var(--gray-50); }
+[data-theme="dark"] .goalsSection { background: var(--bg-primary); }
+[data-theme="dark"] .goalItem { color: var(--gray-500); }
